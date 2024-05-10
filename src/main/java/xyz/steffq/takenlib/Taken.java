@@ -1,17 +1,16 @@
 package xyz.steffq.takenlib;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+import xyz.steffq.takenlib.configuration.ConfigManager;
 
-public final class TakenLib extends JavaPlugin {
+public final class Taken {
 
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
+    @Getter
+    private static ConfigManager configManager;
 
+    public static void onLoad(@NotNull ConfigManager configManager) {
+        Taken.configManager = configManager;
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
 }
